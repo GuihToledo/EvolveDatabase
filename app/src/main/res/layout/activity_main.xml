@@ -39,17 +39,16 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:textColor="@color/background_floating_material_light"
         android:id="@+id/buttonHunters"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="Caçadores"
         android:textStyle="bold"
         android:onClick="onClickCacadores"
-        android:background="@drawable/buttonshape"
+        android:background="@drawable/btn_cacadores"
         android:fontFamily="times new roman"
         />
 
@@ -62,78 +61,17 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:textColor="@color/background_floating_material_light"
         android:id="@+id/buttonClasses"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="Classes"
         android:textStyle="bold"
-        android:onClick="onClickCacadores"
-        android:background="@drawable/buttonshape"
+        android:background="@drawable/btn_monstros"
         android:fontFamily="times new roman"
         />
-
-    <TableRow
-        android:id="@+id/tableRow1">
-
-        <TextView
-            android:id="@+id/textView1"
-            android:paddingRight="20dp" />
-
-    </TableRow>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:textColor="@color/background_floating_material_light"
-        android:id="@+id/buttonMonsters"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:text="Monstros"
-        android:textStyle="bold"
-        android:onClick="onClickCacadores"
-        android:background="@drawable/buttonshape"
-        />
-
-    <TableRow>
-
-        <TextView
-            android:paddingRight="20dp" />
-
-    </TableRow>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:textColor="@color/background_floating_material_light"
-        android:id="@+id/beahero"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:text="Seja um Heroi"
-        android:textStyle="bold"
-        android:onClick="onClickCacadores"
-        android:background="@drawable/buttonshape"
-        />
-
-    <TableRow>
-
-        <TextView
-            android:paddingRight="20dp" />
-
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:paddingRight="20dp" />
-
-    </TableRow>
 
 
 </TableLayout>
