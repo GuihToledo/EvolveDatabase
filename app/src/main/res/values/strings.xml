@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Evolve Database</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Evolve Database</string>
+    <string name="cacadores">Caçadores</string>
+    <string name="monstros">Monstros</string>
+    <string name="title_activity_cacadores">Caçadores</string>
+    <string name="title_activity_classe">ClasseActivity</string>
+
+
+    <string name="title_section1">Hank</string>
+    <string name="title_section2">Cabot</string>
+    <string name="title_section3">Bucket</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+</resources>
