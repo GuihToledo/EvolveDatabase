@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -135,6 +136,8 @@ public class MonstrosActivity extends ActionBarActivity
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_monstros, container, false);
+
+            ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.kraken);
             return rootView;
         }
 
