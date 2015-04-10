@@ -6,7 +6,7 @@
     <string name="cacadores">Caçadores</string>
     <string name="monstros">Monstros</string>
     <string name="title_activity_cacadores">Caçadores</string>
-    <string name="title_activity_classe">ClasseActivity</string>
+    <string name="title_activity_classe">Evolve Database</string>
 
 
     <string name="title_section1">Hank</string>
@@ -18,4 +18,5 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_example">Example action</string>
+    <string name="title_activity_monstros">Monstros</string>
 </resources>

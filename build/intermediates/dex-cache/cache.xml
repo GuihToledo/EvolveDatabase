@@ -16,11 +16,11 @@
         <dex dex="C:\Users\gbardeli\AndroidStudioProjects\EvolveDatabase\app\build\intermediates\pre-dexed\debug\classes-2085af985acabb377a39d41d411328a741587865.jar" />
     </item>
     <item
-        jar="C:\Users\gbardeli\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jar="C:\Users\gbardeli\AndroidStudioProjects\EvolveDatabase\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="C:\Users\gbardeli\AndroidStudioProjects\EvolveDatabase\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-f525a59489d8469537b685cadb5f20ed02f1436d.jar" />
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="C:\Users\gbardeli\AndroidStudioProjects\EvolveDatabase\app\build\intermediates\pre-dexed\debug\classes-a9b01333bd0520f618d1555b7bea0d473b17f3e9.jar" />
     </item>
     <item
         jar="C:\Users\gbardeli\AndroidStudioProjects\EvolveDatabase\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
@@ -28,6 +28,13 @@
         revision="21.1.2"
         sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
         <dex dex="C:\Users\gbardeli\AndroidStudioProjects\EvolveDatabase\app\build\intermediates\pre-dexed\debug\classes-95c0c23d0b50f9e1fd46829e1d97a56396ebab71.jar" />
+    </item>
+    <item
+        jar="C:\Users\gbardeli\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="C:\Users\gbardeli\AndroidStudioProjects\EvolveDatabase\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-f525a59489d8469537b685cadb5f20ed02f1436d.jar" />
     </item>
 
 </items>

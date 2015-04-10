@@ -2,6 +2,7 @@ package com.gbardeli.evolvedatabase;
 
 import java.util.Locale;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -36,10 +37,16 @@ public class ClasseActivity extends ActionBarActivity implements ActionBar.TabLi
      */
     ViewPager mViewPager;
 
+    String classe;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classe);
+
+        Intent intent = getIntent();
+
+        this.classe = intent.getStringExtra("classe");
 
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
@@ -48,6 +55,7 @@ public class ClasseActivity extends ActionBarActivity implements ActionBar.TabLi
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mSectionsPagerAdapter.setClasse(this.classe);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -114,21 +122,35 @@ public class ClasseActivity extends ActionBarActivity implements ActionBar.TabLi
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
     }
 
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
+        /**
+         * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
+         * one of the sections/tabs/pages.
+         */
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
+        }
+
+        private String classe;
+
+        public void setClasse(String classe) {
+            this.classe = classe;
         }
 
         @Override
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            if(classe.equals("Suporte")) {
+                return PlaceholderSupportFragment.newInstance(position + 1);
+            }else if (classe.equals("Assalto")){
+                return PlaceholderAssaltFragment.newInstance(position + 1);
+            }else if (classe.equals("Médico")){
+                return PlaceholderMedicFragment.newInstance(position + 1);
+            }else{
+                return PlaceholderTrapperFragment.newInstance(position + 1);
+            }
         }
 
         @Override
@@ -140,13 +162,42 @@ public class ClasseActivity extends ActionBarActivity implements ActionBar.TabLi
         @Override
         public CharSequence getPageTitle(int position) {
             Locale l = Locale.getDefault();
-            switch (position) {
-                case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
-                case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
+            if(classe.equals("Suporte")) {
+                switch (position) {
+                    case 0:
+                        return "HANK";
+                    case 1:
+                        return "BUCKET";
+                    case 2:
+                        return "CABOT";
+                }
+            }else if (classe.equals("Assalto")){
+                switch (position) {
+                    case 0:
+                        return "MARKOV";
+                    case 1:
+                        return "HYDE";
+                    case 2:
+                        return "PARNELL";
+                }
+            }else if (classe.equals("Médico")){
+                switch (position) {
+                    case 0:
+                        return "VAL";
+                    case 1:
+                        return "LAZARUS";
+                    case 2:
+                        return "CAIRA";
+                }
+            }else{
+                switch (position) {
+                    case 0:
+                        return "MAGGIE";
+                    case 1:
+                        return "GRIFFIN";
+                    case 2:
+                        return "ABE";
+                }
             }
             return null;
         }
@@ -155,7 +206,7 @@ public class ClasseActivity extends ActionBarActivity implements ActionBar.TabLi
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class PlaceholderSupportFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
@@ -166,15 +217,16 @@ public class ClasseActivity extends ActionBarActivity implements ActionBar.TabLi
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
+
+        public static PlaceholderSupportFragment newInstance(int sectionNumber) {
+            PlaceholderSupportFragment fragment = new PlaceholderSupportFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
         }
 
-        public PlaceholderFragment() {
+        public PlaceholderSupportFragment() {
         }
 
         @Override
@@ -182,12 +234,133 @@ public class ClasseActivity extends ActionBarActivity implements ActionBar.TabLi
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_classe, container, false);
 
+
            if (getArguments().getInt(ARG_SECTION_NUMBER) == 1){
                ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.hank);
             }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2){
                ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.cabot);
             }else{
                ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.bucket);
+            }
+            return rootView;
+        }
+    }
+
+    public static class PlaceholderAssaltFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+
+        public static PlaceholderAssaltFragment newInstance(int sectionNumber) {
+            PlaceholderAssaltFragment fragment = new PlaceholderAssaltFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public PlaceholderAssaltFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_classe, container, false);
+
+
+            if (getArguments().getInt(ARG_SECTION_NUMBER) == 1){
+                ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.markov);
+            }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2){
+                ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.hyde);
+            }else{
+                ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.parnell);
+            }
+            return rootView;
+        }
+    }
+
+    public static class PlaceholderTrapperFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+
+        public static PlaceholderTrapperFragment newInstance(int sectionNumber) {
+            PlaceholderTrapperFragment fragment = new PlaceholderTrapperFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public PlaceholderTrapperFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_classe, container, false);
+
+
+            if (getArguments().getInt(ARG_SECTION_NUMBER) == 1){
+                ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.maggie);
+            }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2){
+                ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.griffin);
+            }else{
+                ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.abe);
+            }
+            return rootView;
+        }
+    }
+
+    public static class PlaceholderMedicFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+
+        public static PlaceholderMedicFragment newInstance(int sectionNumber) {
+            PlaceholderMedicFragment fragment = new PlaceholderMedicFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public PlaceholderMedicFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_classe, container, false);
+
+
+            if (getArguments().getInt(ARG_SECTION_NUMBER) == 1){
+                ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.lazarus);
+            }else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2){
+                ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.lazarus);
+            }else{
+                ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.lazarus);
             }
             return rootView;
         }

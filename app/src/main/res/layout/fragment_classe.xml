@@ -1,15 +1,48 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.gbardeli.evolvedatabase.ClasseActivity$PlaceholderFragment"
-    android:background="@color/background_floating_material_dark">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background"
+    >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.gbardeli.evolvedatabase.ClasseActivity$PlaceholderFragment"
+        android:background="@color/background">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/foto"/>
+        <ImageView
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/foto"
+            android:layout_alignParentStart="true" />
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Historia"
+            android:id="@+id/nome"
+            android:layout_below="@+id/foto"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/red"
+            android:background="@drawable/buttonshape"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="A quiet woman with a past shrouded in mystery, Maggie is a loner. For years her only companion was Daisy, her faithful pet Trapjaw. Who needs friends when you have a 400-pound alien dogbeast at your side? When Daisy finds their prey, Maggie relies on her Machine Pistol and Harpoon Traps to bring it down."
+            android:id="@+id/textView3"
+            android:paddingTop="10dp"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/nome"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+</ScrollView>

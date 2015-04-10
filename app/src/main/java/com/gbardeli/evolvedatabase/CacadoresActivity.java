@@ -24,7 +24,7 @@ public class CacadoresActivity extends ActionBarActivity implements AdapterView.
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_cacadores, menu);
+        inflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -39,8 +39,7 @@ public class CacadoresActivity extends ActionBarActivity implements AdapterView.
         int[] para = {R.id.imagemCacador, R.id.valor};
         lv.setAdapter( new SimpleAdapter(this, listarCacadores(),
                 R.layout.list_cacadores, de, para));
-        lv.setOnItemClickListener(this
-        );
+        lv.setOnItemClickListener(this);
 
     }
 
@@ -54,18 +53,27 @@ public class CacadoresActivity extends ActionBarActivity implements AdapterView.
         item.put("imagem", R.drawable.assault);
         item.put("nome", "Assalto");
         cacadores.add(item);
+        item = new HashMap<String, Object>();
+        item.put("imagem", R.drawable.medic);
+        item.put("nome", "Médico");
+        cacadores.add(item);
+        item = new HashMap<String, Object>();
+        item.put("imagem", R.drawable.trapper);
+        item.put("nome", "Armadilheiro");
+        cacadores.add(item);
 
         return cacadores;
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            /*Map<String, Object> map = cacadores.get(position);
-            String destino = (String) map.get("nome");
-            String mensagem = "A Classe selecionada foi: "+ destino;
+            Map<String, Object> map = cacadores.get(position);
+            String classeSelecionada = (String) map.get("nome");
+            /*String mensagem = "A Classe selecionada foi: "+ destino;
             Toast.makeText(this, mensagem, Toast.LENGTH_SHORT).show();*/
 
         Intent intent = new Intent(this, ClasseActivity.class);
+        intent.putExtra("classe",classeSelecionada);
         startActivity(intent);
 
     }

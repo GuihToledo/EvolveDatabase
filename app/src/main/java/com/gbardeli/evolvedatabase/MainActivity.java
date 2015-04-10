@@ -18,8 +18,6 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         view = findViewById(R.id.view);
-
-        view.setBackgroundColor(getResources().getColor(android.R.color.black));
     }
 
 
@@ -48,6 +46,11 @@ public class MainActivity extends ActionBarActivity {
     public void onClickCacadores(View view){
 
         Intent intent = new Intent(this, CacadoresActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickMonstros(View v){
+        Intent intent = new Intent(this, MonstrosActivity.class);
         startActivity(intent);
     }
 
