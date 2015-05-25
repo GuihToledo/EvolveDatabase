@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="A quiet woman with a past shrouded in mystery, Maggie is a loner. For years her only companion was Daisy, her faithful pet Trapjaw. Who needs friends when you have a 400-pound alien dogbeast at your side? When Daisy finds their prey, Maggie relies on her Machine Pistol and Harpoon Traps to bring it down."
-            android:id="@+id/textView3"
+            android:id="@+id/historia"
             android:paddingTop="10dp"
             android:textSize="16dp"
             android:textColor="@color/white"

@@ -137,6 +137,10 @@ public class MonstrosActivity extends ActionBarActivity
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_monstros, container, false);
 
+            int codigo = getArguments().getInt(ARG_SECTION_NUMBER);
+
+
+
             ((ImageView)rootView.findViewById(R.id.foto)).setImageResource(R.drawable.kraken);
             return rootView;
         }
